@@ -41,6 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------------- Hero image carousel ---------------- */
   const heroSlides = document.querySelectorAll('.hero__slide');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Only the first slide has a real `src` on page load — the rest carry
+  // `data-src` so the browser can't fetch them early (all slides share the
+  // same on-screen rectangle, so native loading="lazy" wouldn't defer them).
+  // Swap the rest in only after the page has fully loaded, so they don't
+  // compete with anything on the critical rendering path.
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero__slide[data-src]').forEach(img => {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    });
+  });
+
   if (heroSlides.length > 1 && !reducedMotion) {
     let heroIndex = 0;
     setInterval(() => {
