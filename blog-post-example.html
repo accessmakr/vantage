@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Page Speed Quietly Decides Your Conversion Rate — Vantage Studio</title>
+<meta name="description" content="Slow pages lose visitors before they see your offer. Here's how load time affects conversion rate, what Core Web Vitals actually measure, and what to fix first.">
+<meta name="keywords" content="page speed conversion rate, website load time, core web vitals, site performance business impact">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Vantage Studio">
+<link rel="canonical" href="https://vantageweb.site/blog-post-example.html">
+<link rel="alternate" hreflang="en" href="https://vantageweb.site/blog-post-example.html">
+<link rel="alternate" hreflang="x-default" href="https://vantageweb.site/blog-post-example.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Vantage Studio">
+<meta property="og:title" content="Why Page Speed Quietly Decides Your Conversion Rate">
+<meta property="og:description" content="How load time affects conversion rate, what Core Web Vitals measure, and what to fix first.">
+<meta property="og:url" content="https://vantageweb.site/blog-post-example.html">
+<meta property="og:image" content="https://loremflickr.com/1200/630/speed,performance,laptop/all?lock=502">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Page Speed Quietly Decides Your Conversion Rate">
+<meta name="twitter:description" content="How load time affects conversion rate, what Core Web Vitals measure, and what to fix first.">
+<meta name="twitter:image" content="https://loremflickr.com/1200/630/speed,performance,laptop/all?lock=502">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231E2B21'/%3E%3Crect x='30' y='30' width='40' height='40' fill='%23B4874A' transform='rotate(45 50 50)'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://loremflickr.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json" data-schema>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://vantageweb.site/blog-post-example.html#article",
+      "headline": "Why Page Speed Quietly Decides Your Conversion Rate",
+      "description": "How load time affects conversion rate, what Core Web Vitals measure, and what to fix first.",
+      "url": "https://vantageweb.site/blog-post-example.html",
+      "author": { "@type": "Organization", "name": "Vantage Studio" },
+      "publisher": { "@id": "https://vantageweb.site/#organization" },
+      "image": "https://loremflickr.com/1200/630/speed,performance,laptop/all?lock=502",
+      "datePublished": "2026-07-13",
+      "dateModified": "2026-07-13"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vantageweb.site/blog-post-example.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does one second of load time actually cost in conversions?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It varies by industry and traffic type, but independent studies consistently find measurable drop-offs — often in the single digits of percentage points per additional second — with the steepest losses on mobile and in retail checkouts." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Core Web Vitals?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google's three field-data metrics for user experience: Largest Contentful Paint (loading), Interaction to Next Paint (responsiveness), and Cumulative Layout Shift (visual stability)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does page speed affect SEO rankings, not just conversions?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Core Web Vitals are a confirmed ranking factor, so speed improvements can influence both organic visibility and on-page conversion rate at the same time." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+<div class="season-banner"><span data-season-banner></span><button type="button" aria-label="Dismiss banner" data-dismiss-banner>&times;</button></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="index.html" class="logo"><span class="logo__mark"></span>VANTAGE</a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#industries">Industries</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" class="is-active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="contact.html" class="btn btn--ghost" style="padding:11px 20px;" data-cta-rotate>Start a Project</a>
+      <button class="nav__burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap wrap--narrow">
+    <p class="eyebrow">Performance</p>
+    <h1>Why Page Speed Quietly Decides Your Conversion Rate</h1>
+    <div class="article-meta">
+      <span>By the Vantage Studio team</span>
+      <span data-freshness></span>
+      <span>6 min read</span>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:0;">
+  <div class="wrap wrap--narrow">
+
+    <div class="quick-answer reveal">
+      <h2>Quick answer</h2>
+      <p>Yes — page load time has a direct, measurable relationship with conversion rate. Visitors decide whether to stay within the first few seconds, and every additional second of load time gives them another chance to leave before they've even seen your offer. Fixing speed is usually one of the highest-leverage changes a website can make.</p>
+    </div>
+
+    <img src="https://loremflickr.com/1100/620/speed,performance,laptop/all?lock=502" alt="Laptop displaying a website performance report" style="border-radius:3px; margin-bottom: var(--sp-4);" loading="lazy">
+
+    <div class="article-body reveal">
+      <h2>The short version</h2>
+      <p>Speed isn't a technical nice-to-have anymore — it's a business metric. Google's own performance research has repeatedly found that the probability of a visitor abandoning a page rises sharply as load time increases, and that relationship holds across industries, from retail to finance to travel. A site that loads in one second is working with an entirely different set of odds than one that takes five.</p>
+
+      <h2>Why slower pages lose visitors before they see your offer</h2>
+      <p>The mechanism is simple: every second a page spends loading is a second where a visitor is deciding whether to wait or leave. Google's published research on this found that as load time stretches from one second to three, the probability of a bounce increases by roughly a third — and by five seconds, it nearly doubles. None of that drop-off has anything to do with your offer, your pricing, or your copy. Visitors never get far enough to judge any of it.</p>
+
+      <div class="compare-table">
+        <table>
+          <thead><tr><th>Load Time</th><th>Typical Bounce Increase vs. 1-Second Baseline</th></tr></thead>
+          <tbody>
+            <tr><td>1 second</td><td class="is-highlight">Baseline</td></tr>
+            <tr><td>3 seconds</td><td>~32% more likely to bounce</td></tr>
+            <tr><td>5 seconds</td><td>~90% more likely to bounce</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:var(--stone-light); margin-top:-16px;">Figures paraphrased from Google's published performance research — see citations below.</p>
+
+      <h2>What "fast enough" actually means today</h2>
+      <p>Google measures real-world speed through three Core Web Vitals: Largest Contentful Paint (how quickly the main content appears), Interaction to Next Paint (how quickly the page responds once someone clicks or taps), and Cumulative Layout Shift (whether elements jump around while loading). These aren't abstract scores — they're built from real visitor data, and they're also a confirmed search ranking factor, which means a slow site can be losing both conversions and visibility at once.</p>
+
+      <div class="callout-box">
+        <strong>Where this shows up in practice:</strong> unoptimized hero images, render-blocking scripts loaded before content, and third-party widgets (chat, reviews, tracking pixels) are the three most common causes we find during a technical audit — and all three are fixable without a full rebuild.
+      </div>
+
+      <h2>What we check first</h2>
+      <p>Before touching design, we run a performance pass: image delivery, script loading order, font strategy, and hosting response time. It's usually where the fastest, cheapest wins are sitting. If you want a second opinion on where your own site is losing visitors, that's exactly what our <a href="index.html#services" style="color:var(--champagne-deep); text-decoration:underline;">development and strategy work</a> covers.</p>
+
+      <div class="logic-methodology">
+        <div class="lm-card"><span>Logic</span><p>Faster pages let visitors reach your value proposition before their attention lapses, so speed compounds directly into conversion opportunity.</p></div>
+        <div class="lm-card"><span>Methodology</span><p>Figures above are paraphrased from Google's own published performance research rather than a single third-party estimate.</p></div>
+      </div>
+
+      <div class="citations">
+        <h2>Sources</h2>
+        <ol>
+          <li>Google web.dev — <a href="https://web.dev/learn/performance/why-speed-matters" target="_blank" rel="noopener">"Why does speed matter?"</a>, performance and business outcome research.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="faq reveal" style="margin-top: var(--sp-6);">
+      <div class="sec-head" style="margin-bottom: var(--sp-4);"><p class="eyebrow">Frequently asked</p><h2 style="font-size:1.6rem;">About page speed and conversions.</h2></div>
+      <div class="faq-item"><button class="faq-item__q">How much does one second of load time actually cost in conversions?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>It varies by industry and traffic type, but independent studies consistently find measurable drop-offs — often in the single digits of percentage points per additional second — with the steepest losses on mobile and in retail checkouts.</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">What are Core Web Vitals?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Google's three field-data metrics for user experience: Largest Contentful Paint (loading), Interaction to Next Paint (responsiveness), and Cumulative Layout Shift (visual stability).</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">Does page speed affect SEO rankings, not just conversions?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Yes. Core Web Vitals are a confirmed ranking factor, so speed improvements can influence both organic visibility and on-page conversion rate at the same time.</p></div></div>
+    </div>
+
+    <div class="share reveal">
+      <button data-share="whatsapp" type="button">WhatsApp</button>
+      <button data-share="facebook" type="button">Facebook</button>
+      <button data-share="x" type="button">X</button>
+      <button data-share="linkedin" type="button">LinkedIn</button>
+      <button data-share="reddit" type="button">Reddit</button>
+      <button data-share="telegram" type="button">Telegram</button>
+      <button data-share="pinterest" type="button">Pinterest</button>
+      <button data-share="email" type="button">Email</button>
+      <button data-share="copy" type="button">Copy Link</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow eyebrow--center" style="color: var(--champagne-soft);">Let's talk</p>
+      <h2>Think your site might be losing conversions to speed?</h2>
+      <p>We'll take a look and tell you honestly what's worth fixing.</p>
+      <div class="cta__ctas">
+        <a href="contact.html" class="btn btn--gold" data-cta-rotate>Start a Project</a>
+        <a href="index.html#services" class="btn btn--outline-light">See Our Development Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="dynamic-internal-links" class="wrap" style="padding-block: var(--sp-4) 0;">
+  <p class="eyebrow" style="margin-bottom:16px;">Explore more</p>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; font-size:14px;">
+    <a href="blog.html" style="color:var(--champagne-deep); text-decoration:underline;">More from the blog</a>
+    <a href="index.html#work" style="color:var(--champagne-deep); text-decoration:underline;">See our work</a>
+    <a href="contact.html" style="color:var(--champagne-deep); text-decoration:underline;">Start a project</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark"></span>VANTAGE</a>
+        <p>Enterprise-grade web design, built to outlast the trend cycle.</p>
+        <div class="footer__social">
+          <a href="https://x.com/vantagestudio" target="_blank" rel="noopener">X (Twitter)</a>
+          <a href="https://github.com/vantagestudio" target="_blank" rel="noopener">Github</a>
+        </div>
+      </div>
+      <div class="footer__col"><h4>Studio</h4><ul><li><a href="about.html">About</a></li><li><a href="index.html#work">Work</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="footer__col"><h4>Services</h4><ul><li><a href="index.html#services">Web Design</a></li><li><a href="index.html#services">UX / UI</a></li><li><a href="index.html#services">Brand Identity</a></li><li><a href="index.html#services">Development</a></li></ul></div>
+      <div class="footer__col"><h4>Industries</h4><ul><li><a href="index.html#industries">Finance</a></li><li><a href="index.html#industries">Healthcare</a></li><li><a href="index.html#industries">Hospitality</a></li><li><a href="index.html#industries">Real Estate</a></li></ul></div>
+      <div class="footer__col footer__news">
+        <h4>Stay in the loop</h4>
+        <p style="font-size:14px; color:var(--stone);">Studio notes and case studies, monthly.</p>
+        <form onsubmit="event.preventDefault(); showToast('Thanks — you are on the list.');">
+          <input type="email" placeholder="you@company.com" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year></span> Vantage Studio. All rights reserved.</p>
+      <div class="footer__legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="cookies-policy.html">Cookies Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="toast-container"></div>
+<script defer src="js/main.js"></script>
+</body>
+</html>
