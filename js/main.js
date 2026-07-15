@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => observer.observe(el));
   }
 
+  /* ---------------- Hero image carousel ---------------- */
+  const heroSlides = document.querySelectorAll('.hero__slide');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (heroSlides.length > 1 && !reducedMotion) {
+    let heroIndex = 0;
+    setInterval(() => {
+      heroSlides[heroIndex].classList.remove('is-active');
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      heroSlides[heroIndex].classList.add('is-active');
+    }, 5000);
+  }
+
   /* ---------------- Scroll progress bar ---------------- */
   const progress = document.querySelector('.scroll-progress');
   if (progress) {
