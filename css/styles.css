@@ -152,7 +152,37 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero__ctas{ display:flex; gap: var(--sp-2); flex-wrap:wrap; margin-bottom: var(--sp-6); }
 .hero__trust{ border-top:1px solid rgba(247,245,239,0.22); padding-top: var(--sp-3); font-size:15px; color: rgba(247,245,239,0.68); max-width: 52ch; }
 
-/* ---------- LOGO MARQUEE ---------- */
+/* ---------- REACH US TABS (home page teaser) ---------- */
+.reach-us{ padding-block: var(--sp-6); }
+.tabs__nav{ display:flex; gap: var(--sp-2); flex-wrap:wrap; border-bottom:1px solid var(--line); margin-bottom: var(--sp-5); }
+.tabs__btn{
+  background:none; border:none; padding: 14px 6px; margin-bottom:-1px;
+  font-size:14px; font-weight:600; color: var(--stone-light);
+  border-bottom: 2px solid transparent; transition: color .2s ease, border-color .2s ease;
+  display:flex; align-items:center; gap:8px;
+}
+.tabs__btn svg{ width:16px; height:16px; stroke: currentColor; fill:none; stroke-width:1.8; }
+.tabs__btn:hover{ color: var(--ink); }
+.tabs__btn.is-active{ color: var(--champagne-deep); border-color: var(--champagne-deep); }
+.tabs__panel{ display:none; }
+.tabs__panel.is-active{ display:block; animation: tabFadeIn .55s ease; }
+@keyframes tabFadeIn{ from{ opacity:0; transform: translateY(10px); } to{ opacity:1; transform: translateY(0); } }
+
+.reach-panel{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); align-items:center; }
+.reach-panel__body h3{ font-size:22px; margin-bottom:10px; }
+.reach-panel__body p{ font-size:15px; color: var(--stone); margin-bottom: var(--sp-3); max-width:44ch; }
+.reach-panel__visual{ background: var(--porcelain-deep); border-radius: var(--radius); padding: var(--sp-4); }
+.reach-panel__visual .address-block{ margin-bottom:0; }
+.reach-panel__visual .pay-card{ background: var(--card); }
+.reach-panel__visual .pay-card + .pay-card{ margin-top: var(--sp-2); }
+
+@media (max-width: 720px){
+  .reach-panel{ grid-template-columns: 1fr; }
+  .tabs__nav{ gap: var(--sp-1); }
+  .tabs__btn{ font-size:13px; padding: 12px 4px; }
+}
+
+
 .logo-strip{ padding-block: var(--sp-4); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .logo-strip .wrap{ display:flex; flex-direction:column; gap: var(--sp-3); }
 .logo-strip .eyebrow{ justify-content:center; }
