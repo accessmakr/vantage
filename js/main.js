@@ -92,6 +92,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------------- Tabs (Reach Us section) ---------------- */
+  document.querySelectorAll('.tabs').forEach(group => {
+    const btns = group.querySelectorAll('.tabs__btn');
+    const panels = group.querySelectorAll('.tabs__panel');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => { b.classList.remove('is-active'); b.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p => p.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        const target = document.getElementById(btn.getAttribute('aria-controls'));
+        if (target) target.classList.add('is-active');
+      });
+    });
+  });
+
   /* ---------------- FAQ accordion ---------------- */
   document.querySelectorAll('.faq-item__q').forEach(q => {
     q.addEventListener('click', () => {
