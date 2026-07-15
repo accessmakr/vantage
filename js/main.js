@@ -63,6 +63,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
   }
 
+  /* ---------------- Testimonial carousel ---------------- */
+  const testiCards = document.querySelectorAll('.testi-carousel .testi-card');
+  const testiDots = document.querySelectorAll('.testi-carousel__dot');
+  if (testiCards.length > 1) {
+    let testiIndex = 0;
+    const showTesti = (i) => {
+      testiCards.forEach(c => c.classList.remove('is-active'));
+      testiDots.forEach(d => d.classList.remove('is-active'));
+      testiCards[i].classList.add('is-active');
+      if (testiDots[i]) testiDots[i].classList.add('is-active');
+      testiIndex = i;
+    };
+    testiDots.forEach((dot, i) => dot.addEventListener('click', () => showTesti(i)));
+    if (!reducedMotion) {
+      setInterval(() => showTesti((testiIndex + 1) % testiCards.length), 6000);
+    }
+  }
+
   /* ---------------- Scroll progress bar ---------------- */
   const progress = document.querySelector('.scroll-progress');
   if (progress) {
