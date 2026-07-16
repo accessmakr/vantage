@@ -2,26 +2,37 @@
  * Cloudflare Pages Function — POST /contact
  *
  * Receives the Vantage contact form (JSON body: name, email, whatsapp,
- * message, bot-field) and relays it to accessmakr@gmail.com via the
- * Resend API. Runs entirely on Cloudflare's edge — no server to manage.
+ * message, bot-field) and relays it to accessmakr@gmail.com using
+ * Cloudflare's own Email Service — no third-party provider involved.
  *
  * SETUP REQUIRED before this works in production:
- *   1. Create a free Resend account: https://resend.com
- *   2. Add and verify the vantageweb.site domain in Resend (DNS records).
- *   3. Create an API key in Resend.
+ *   1. This site's domain (vantageweb.site) must be on Cloudflare DNS —
+ *      already true once you've connected it to Cloudflare Pages.
+ *   2. In the Cloudflare dashboard, go to Compute & AI → Email Service
+ *      and onboard vantageweb.site for sending. This adds SPF/DKIM DNS
+ *      records for you to confirm — Cloudflare Email Service is a
+ *      separate opt-in from just having the domain on Cloudflare DNS.
+ *   3. Create an API token with "Email Sending: Edit" permission under
+ *      My Profile → API Tokens.
  *   4. In the Cloudflare Pages dashboard for this project, go to
- *      Settings → Environment variables → add a secret named
- *      RESEND_API_KEY with that key. Do this for both Production and
- *      Preview environments.
- *   5. Update the "from" address below once your domain is verified —
- *      it must be an address on a domain you've verified with Resend.
+ *      Settings → Environment variables and add two secrets, for both
+ *      Production and Preview:
+ *        - CF_ACCOUNT_ID   (your Cloudflare account ID)
+ *        - CF_EMAIL_TOKEN  (the API token from step 3)
+ *   5. Update FROM_ADDRESS below once your domain is verified — it must
+ *      be an address on vantageweb.site.
  *
- * Until RESEND_API_KEY is set, this function returns a 500 so the form
+ * Cloudflare Email Service is a newer product (still Beta as of this
+ * writing) — the send endpoint is stable enough to build against, but
+ * keep an eye on Cloudflare's changelog if anything about auth or the
+ * request shape changes.
+ *
+ * Until both secrets are set, this function returns a 500 so the form
  * fails loudly instead of silently pretending to send.
  */
 
 const TO_ADDRESS = 'accessmakr@gmail.com';
-const FROM_ADDRESS = 'Vantage Studio <noreply@vantageweb.site>';
+const FROM_ADDRESS = { address: 'noreply@vantageweb.site', name: 'Vantage Studio' };
 const MAX_FIELD_LENGTH = 3000;
 
 function isValidEmail(value) {
@@ -60,13 +71,13 @@ export async function onRequestPost(context) {
     return json({ error: 'Please provide a valid name, email, and message.' }, 400);
   }
 
-  if (!env.RESEND_API_KEY) {
+  if (!env.CF_ACCOUNT_ID || !env.CF_EMAIL_TOKEN) {
     return json({ error: 'Contact form is not configured yet.' }, 500);
   }
 
   const emailPayload = {
-    from: FROM_ADDRESS,
     to: [TO_ADDRESS],
+    from: FROM_ADDRESS,
     reply_to: email,
     subject: `New Request And Contact submission — ${name}`,
     html: `
@@ -76,22 +87,27 @@ export async function onRequestPost(context) {
       <p><strong>WhatsApp:</strong> ${escapeHtml(whatsapp || 'Not provided')}</p>
       <p><strong>Message:</strong></p>
       <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
-    `
+    `,
+    text: `New enquiry from vantageweb.site\n\nName: ${name}\nEmail: ${email}\nWhatsApp: ${whatsapp || 'Not provided'}\n\nMessage:\n${message}`
   };
 
   try {
-    const resendRes = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(emailPayload)
-    });
+    const cfRes = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/email/sending/send`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${env.CF_EMAIL_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailPayload)
+      }
+    );
 
-    if (!resendRes.ok) {
-      const errText = await resendRes.text();
-      console.error('Resend error:', errText);
+    const cfData = await cfRes.json().catch(() => null);
+
+    if (!cfRes.ok || !cfData || cfData.success !== true) {
+      console.error('Cloudflare Email Service error:', cfData);
       return json({ error: 'Email provider rejected the request.' }, 502);
     }
 
