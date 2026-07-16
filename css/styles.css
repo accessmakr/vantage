@@ -253,6 +253,14 @@ section{ padding-block: var(--sp-7); }
 .process__body h3{ font-size:22px; font-weight:500; margin-bottom:8px; }
 .process__body p{ color: var(--stone); max-width:56ch; }
 
+/* ---------- LEADERSHIP / TEAM ---------- */
+.team__grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 260px)); gap: var(--sp-5); justify-content:center; max-width: 900px; margin-inline:auto; }
+.team-card{ text-align:center; }
+.team-card__photo{ width:140px; height:140px; border-radius:50%; object-fit:cover; margin-inline:auto; margin-bottom: var(--sp-3); border: 4px solid var(--card); box-shadow: 0 20px 40px -25px rgba(27,25,18,0.4); display:block; }
+.team-card h3{ font-size:19px; margin-bottom:4px; }
+.team-card span{ display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color: var(--champagne-deep); margin-bottom:10px; }
+.team-card p{ font-size:14px; color: var(--stone); max-width:30ch; margin-inline:auto; }
+
 /* ---------- QUALITATIVE DIFFERENTIATORS (replaces numeric stat cards) ---------- */
 .why{ background: var(--porcelain-deep); }
 .why__grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4); margin-top: var(--sp-6); }
