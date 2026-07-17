@@ -65,6 +65,31 @@
           "@type": "Question",
           "name": "Does page speed affect SEO rankings, not just conversions?",
           "acceptedAnswer": { "@type": "Answer", "text": "Yes. Core Web Vitals are a confirmed ranking factor, so speed improvements can influence both organic visibility and on-page conversion rate at the same time." }
+        },
+        {
+          "@type": "Question",
+          "name": "What's a good Largest Contentful Paint target?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google considers 2.5 seconds or faster \"good.\" Between 2.5 and 4 seconds needs improvement, and anything slower is flagged as poor." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does adding more images automatically slow a site down?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not if they're sized, compressed, and lazy-loaded correctly. Unoptimized images — not images in general — are the usual culprit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a fast site still convert poorly?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes — speed removes a barrier to conversion, it doesn't guarantee one. Offer, copy, and design still have to do their job once the page loads." }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should page speed be re-tested?",
+          "acceptedAnswer": { "@type": "Answer", "text": "After any major content or design change, and as a routine check every few months even if nothing's changed — third-party scripts have a way of quietly creeping back in." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a content delivery network worth it for a small site?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually yes if visitors are geographically spread out — it cuts the physical distance data has to travel, which matters most for image-heavy pages." }
         }
       ]
     }
@@ -115,13 +140,23 @@
       <p>Yes — page load time has a direct, measurable relationship with conversion rate. Visitors decide whether to stay within the first few seconds, and every additional second of load time gives them another chance to leave before they've even seen your offer. Fixing speed is usually one of the highest-leverage changes a website can make.</p>
     </div>
 
+    <nav class="toc reveal" aria-label="Table of contents">
+      <p class="toc__title">On this page</p>
+      <ol>
+        <li><a href="#short-version">The short version</a></li>
+        <li><a href="#why-visitors-leave">Why slower pages lose visitors</a></li>
+        <li><a href="#fast-enough">What "fast enough" actually means</a></li>
+        <li><a href="#what-we-check">What we check first</a></li>
+      </ol>
+    </nav>
+
     <img src="images/blog-post-speed.jpg" alt="Laptop displaying a website performance report" style="border-radius:3px; margin-bottom: var(--sp-4);" loading="lazy">
 
     <div class="article-body reveal">
-      <h2>The short version</h2>
+      <h2 id="short-version">The short version</h2>
       <p>Speed isn't a technical nice-to-have anymore — it's a business metric. Google's own performance research has repeatedly found that the probability of a visitor abandoning a page rises sharply as load time increases, and that relationship holds across industries, from retail to finance to travel. A site that loads in one second is working with an entirely different set of odds than one that takes five.</p>
 
-      <h2>Why slower pages lose visitors before they see your offer</h2>
+      <h2 id="why-visitors-leave">Why slower pages lose visitors before they see your offer</h2>
       <p>The mechanism is simple: every second a page spends loading is a second where a visitor is deciding whether to wait or leave. Google's published research on this found that as load time stretches from one second to three, the probability of a bounce increases by roughly a third — and by five seconds, it nearly doubles. None of that drop-off has anything to do with your offer, your pricing, or your copy. Visitors never get far enough to judge any of it.</p>
 
       <div class="compare-table">
@@ -136,14 +171,14 @@
       </div>
       <p style="font-size:13px; color:var(--stone-light); margin-top:-16px;">Figures paraphrased from Google's published performance research — see citations below.</p>
 
-      <h2>What "fast enough" actually means today</h2>
+      <h2 id="fast-enough">What "fast enough" actually means today</h2>
       <p>Google measures real-world speed through three Core Web Vitals: Largest Contentful Paint (how quickly the main content appears), Interaction to Next Paint (how quickly the page responds once someone clicks or taps), and Cumulative Layout Shift (whether elements jump around while loading). These aren't abstract scores — they're built from real visitor data, and they're also a confirmed search ranking factor, which means a slow site can be losing both conversions and visibility at once.</p>
 
       <div class="callout-box">
         <strong>Where this shows up in practice:</strong> unoptimized hero images, render-blocking scripts loaded before content, and third-party widgets (chat, reviews, tracking pixels) are the three most common causes we find during a technical audit — and all three are fixable without a full rebuild.
       </div>
 
-      <h2>What we check first</h2>
+      <h2 id="what-we-check">What we check first</h2>
       <p>Before touching design, we run a performance pass: image delivery, script loading order, font strategy, and hosting response time. It's usually where the fastest, cheapest wins are sitting. If you want a second opinion on where your own site is losing visitors, that's exactly what our <a href="index.html#services" style="color:var(--champagne-deep); text-decoration:underline;">development and strategy work</a> covers.</p>
 
       <div class="logic-methodology">
@@ -164,6 +199,11 @@
       <div class="faq-item"><button class="faq-item__q">How much does one second of load time actually cost in conversions?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>It varies by industry and traffic type, but independent studies consistently find measurable drop-offs — often in the single digits of percentage points per additional second — with the steepest losses on mobile and in retail checkouts.</p></div></div>
       <div class="faq-item"><button class="faq-item__q">What are Core Web Vitals?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Google's three field-data metrics for user experience: Largest Contentful Paint (loading), Interaction to Next Paint (responsiveness), and Cumulative Layout Shift (visual stability).</p></div></div>
       <div class="faq-item"><button class="faq-item__q">Does page speed affect SEO rankings, not just conversions?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Yes. Core Web Vitals are a confirmed ranking factor, so speed improvements can influence both organic visibility and on-page conversion rate at the same time.</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">What's a good Largest Contentful Paint target?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Google considers 2.5 seconds or faster "good." Between 2.5 and 4 seconds needs improvement, and anything slower is flagged as poor.</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">Does adding more images automatically slow a site down?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Not if they're sized, compressed, and lazy-loaded correctly. Unoptimized images — not images in general — are the usual culprit.</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">Can a fast site still convert poorly?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Yes — speed removes a barrier to conversion, it doesn't guarantee one. Offer, copy, and design still have to do their job once the page loads.</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">How often should page speed be re-tested?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>After any major content or design change, and as a routine check every few months even if nothing's changed — third-party scripts have a way of quietly creeping back in.</p></div></div>
+      <div class="faq-item"><button class="faq-item__q">Is a content delivery network worth it for a small site?<svg class="faq-item__chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-item__a"><p>Usually yes if visitors are geographically spread out — it cuts the physical distance data has to travel, which matters most for image-heavy pages.</p></div></div>
     </div>
 
     <div class="share reveal">
@@ -221,7 +261,7 @@
       <div class="footer__col footer__news">
         <h4>Stay in the loop</h4>
         <p style="font-size:14px; color:var(--stone);">Studio notes and case studies, monthly.</p>
-        <form onsubmit="event.preventDefault(); showToast('Thanks — you are on the list.');">
+        <form>
           <input type="email" placeholder="you@company.com" required>
           <button type="submit">Join</button>
         </form>

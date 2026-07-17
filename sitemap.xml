@@ -4,6 +4,8 @@
   <url><loc>https://vantageweb.site/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://vantageweb.site/blog.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://vantageweb.site/blog-post-example.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vantageweb.site/blog-post-agency-vs-freelancer.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://vantageweb.site/blog-post-discovery-call.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://vantageweb.site/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://vantageweb.site/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://vantageweb.site/cookies-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
