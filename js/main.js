@@ -242,6 +242,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------------- Newsletter signup (Cloudflare Pages Function) ---------------- */
+  document.querySelectorAll('.footer__news form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]');
+      const btn = form.querySelector('button');
+      const email = input.value.trim();
+      if (!email) return;
+
+      const originalLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '…';
+
+      try {
+        const res = await fetch('/newsletter', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (!res.ok) throw new Error('Request failed');
+        showToast('Thanks — you are on the list.');
+        form.reset();
+      } catch (err) {
+        showToast('Could not sign up — please try again.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    });
+  });
+
   /* ---------------- Contact form (Cloudflare Pages Function backend) ---------------- */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
