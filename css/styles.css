@@ -308,6 +308,12 @@ section{ padding-block: var(--sp-7); }
 .quick-answer h2{ font-size:14px; text-transform:uppercase; letter-spacing:.08em; color: var(--champagne-deep); margin-bottom:10px; font-family: var(--body); font-weight:700; }
 .quick-answer p{ font-size:17px; color: var(--ink); line-height:1.6; }
 
+.toc{ background: var(--porcelain-deep); border-radius: var(--radius); padding: var(--sp-3) var(--sp-4); margin-block: var(--sp-4) var(--sp-5); }
+.toc__title{ font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color: var(--champagne-deep); margin-bottom:10px; }
+.toc ol{ list-style:decimal; padding-left:1.2em; display:grid; gap:6px; margin:0; }
+.toc a{ font-size:14.5px; color: var(--ink); text-decoration:underline; text-underline-offset:2px; }
+.toc a:hover{ color: var(--champagne-deep); }
+
 /* ---------- ARTICLE / BLOG CONTENT ---------- */
 .article-head{ padding-block: var(--sp-6) var(--sp-4); }
 .article-head .eyebrow{ margin-bottom: var(--sp-2); }
